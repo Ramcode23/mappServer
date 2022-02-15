@@ -6,7 +6,7 @@ const http= require('http');
 const server=http.createServer(app);
 app.use(cors());
 
-const PORT=3000;
+const PORT=5000;
  const io = require('socket.io')(server,{
 cors: {
     origin: ['http://localhost:4200']
@@ -39,5 +39,5 @@ app.use(express.static('public'));
 
 })
 server.listen(PORT,()=>{
-    console.log('Server is running on port 3000');
+    console.log('Server is running on port'+PORT);
 })
