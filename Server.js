@@ -1,12 +1,12 @@
 const express= require('express');
 const cors= require('cors');
-
+require('dotenv').config();
 const app= express();
 const http= require('http');
 const server=http.createServer(app);
 app.use(cors());
 
-const PORT=process.env.PORT || 3000;
+const PORT=process.env.PORT || 52848;
  const io = require('socket.io')(server,{
 cors: {
     origin: ['http://localhost:4200']
@@ -38,6 +38,6 @@ app.use(express.static('public'));
       });
 
 })
-server.listen(PORT,()=>{
-    console.log('Server is running on port'+PORT);
+server.listen(process.env.PORT,()=>{
+    console.log('Server is running on port'+process.env.PORT);
 })
