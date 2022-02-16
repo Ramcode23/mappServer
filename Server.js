@@ -14,6 +14,9 @@ cors: {
 
  });
 
+app.use(express.static('public'));
+
+
  io.on('connection', (socket) => {
 
     socket.on('find-driver', (points) => {
@@ -29,6 +32,11 @@ cors: {
             }
         }, 1000) 
     })
+
+      socket.on('disconnect', () => {
+        console.log('a user disconnected!');
+      });
+
 })
 server.listen(PORT,()=>{
     console.log('Server is running on port 3000');
