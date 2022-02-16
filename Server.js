@@ -38,6 +38,6 @@ app.use(express.static('public'));
       });
 
 })
-server.listen(process.env.PORT,()=>{
+server.listen(5000,()=>{
     console.log('Server is running on port'+process.env.PORT);
 })
