@@ -31,7 +31,6 @@ app.use(express.static('public'));
                 clearInterval(counter)
             } else {
                 socket.emit('position', coords);
-                console.log('position actual',coords)
             }
         }, 1000) 
     })
